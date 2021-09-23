@@ -1,0 +1,27 @@
+CREATE DATABASE quanlybanhang;
+USE quanlybanhang;
+CREATE TABLE product(
+pID INT PRIMARY KEY,
+pName VARCHAR(45),
+pPrice DOUBLE
+);
+CREATE TABLE customer(
+cID INT PRIMARY KEY,
+cName VARCHAR(45),
+age INT
+);
+CREATE TABLE `order`(
+oID INT PRIMARY KEY,
+cID INT,
+oDate DATE,
+oTotalPrice DOUBLE,
+FOREIGN KEY (cID) REFERENCES customer(cID)
+);
+CREATE TABLE order_detail(
+oID INT,
+pID INT,
+odQTY VARCHAR(45),
+PRIMARY KEY (oID,pID),
+FOREIGN KEY (oID) REFERENCES `order`(oID),
+FOREIGN KEY (pID) REFERENCES product(pID)
+);
