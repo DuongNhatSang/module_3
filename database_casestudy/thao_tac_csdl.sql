@@ -27,7 +27,7 @@ ORDER BY so_lan_dat;
 --         các Khách hàng đã từng đặt phỏng. (Những Khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
 SELECT khachhang.id_khach_hang,khachhang.ho,khachhang.ten,loaikhach.ten_loai_khach,hopdong.id_hop_dong,dichvu.ten_dich_vu,
-hopdong.ngay_lam_hop_dong,hopdong.ngay_ket_thuc, sum(dichvu.chi_phi_thue + (hopdongchitiet.so_luong*dichvudikem.gia)) AS tong_tien
+hopdong.ngay_lam_hop_dong,hopdong.ngay_ket_thuc, sum(dichvu.chi_phi_thue + coalesce(hopdongchitiet.so_luong*dichvudikem.gia,0)) AS tong_tien
 FROM khachhang
 LEFT JOIN hopdong on khachhang.id_khach_hang = hopdong.id_khach_hang
 JOIN loaikhach on loaikhach.id_loai_khach = khachhang.id_loai_khach
