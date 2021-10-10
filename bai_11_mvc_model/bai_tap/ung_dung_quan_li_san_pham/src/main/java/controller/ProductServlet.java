@@ -29,6 +29,7 @@ public class ProductServlet extends HttpServlet {
                 updateProduct(request,response);
                 break;
             case "delete":
+                deleteProduct(request,response);
                 break;
             case "view":
                 break;
@@ -49,9 +50,8 @@ public class ProductServlet extends HttpServlet {
             case "update":
                 showUpdateProduct(request,response);
                 break;
-            case "delete":
-                break;
             case "view":
+                viewProduct(request,response);
                 break;
             default:
                 showListProduct(request,response);
@@ -92,5 +92,16 @@ public class ProductServlet extends HttpServlet {
         product.setProducer(producer);
         showListProduct(request,response);
 
+    }
+    private  void  deleteProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        productService.remove(id);
+        showListProduct(request,response);
+    }
+    private void viewProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = productService.findById(id);
+        request.setAttribute("product",product);
+        request.getRequestDispatcher("/product/view.jsp").forward(request,response);
     }
 }

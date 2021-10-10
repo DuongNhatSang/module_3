@@ -43,6 +43,12 @@ productList.add(product);
 
     @Override
     public void remove(int id) {
-        productList.remove(id);
+        for (int i = 0; i < productList.size(); i++) {
+            if(productList.get(i).getId() == id){
+               productList.remove(productList.get(i));
+               break;
+            }
+        }
+
     }
 }

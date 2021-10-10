@@ -13,6 +13,27 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
+<h1>Product details</h1>
+<p>
+    <a href="/product">Back to product list</a>
+</p>
+<table>
+    <tr>
+        <td>ID: </td>
+        <td>${requestScope["product"].getId()}</td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td>${requestScope["product"].getName()}</td>
+    </tr>
+    <tr>
+        <td>Price: </td>
+        <td>${requestScope["product"].getPrice()}</td>
+    </tr>
+    <tr>
+        <td>Producer: </td>
+        <td>${requestScope["product"].getProducer()}</td>
+    </tr>
+</table>
 </body>
 </html>

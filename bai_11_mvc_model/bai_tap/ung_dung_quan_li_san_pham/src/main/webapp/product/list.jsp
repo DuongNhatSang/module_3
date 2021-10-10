@@ -35,12 +35,12 @@
     <c:forEach var="pro" items="${listProduct}">
         <tr>
             <th>${pro.getId()}</th>
-            <td>${pro.name}</td>
+            <td><a href="/product?action=view&id=${pro.id}">${pro.name}</a></td>
             <td>${pro.price}</td>
             <td>${pro.producer}</td>
             <td>
                 <a href="/product?action=update&id=${pro.id}">Update |</a>
-                <a href="#deleteNoteModal" class="delete" data-toggle="modal" title="Delete">Delete</a>
+                <a href="#deleteNoteModal" onclick="onDelete(${pro.id})" class="delete" data-toggle="modal" title="Delete">Delete</a>
             </td>
         </tr>
     </c:forEach>
@@ -50,16 +50,17 @@
 <div id="deleteNoteModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/delete" method="post">
+            <form action="/product" method="post">
                 <div class="modal-header">
-                    <h4 class="modal-title">Delete Employee</h4>
+                    <h4 class="modal-title">Delete Product</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="form-group">
-                    <input type="hidden" name="id" />
+                    <input type="hidden" name="id" id="id"/>
+                    <input type="hidden" name="action" value="delete">
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure you want to delete these Records?</p>
+                    <p>Are you sure you want to delete product ?</p>
                     <label name="title"></label>
                     <p class="text-warning"><small>This action cannot be undone.</small></p>
                 </div>
@@ -71,6 +72,10 @@
         </div>
     </div>
 </div>
-
+<script>
+    function onDelete(id) {
+        document.getElementById("id").value = id;
+    }
+</script>
 </body>
 </html>
