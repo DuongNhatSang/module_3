@@ -14,34 +14,34 @@
 </head>
 <body>
 <h2>Simple Calculator</h2>
-<div class="row">
-    <div class="col-4">
-        <form method="post" action="/calculator">
-            <div class="form-group">
-                <label for="inputAddress">First operand</label>
-                <input type="number" class="form-control" id="inputAddress" placeholder="Enter number"
-                       name="firsrOperand">
-            </div>
-            <div class="form-row">
-                <label for="inputState">Operator</label>
-                <select id="inputState" class="form-control" name="operator">
-                    <option selected>Addition</option>
-                    <option>+</option>
-                    <option>-</option>
-                    <option>*</option>
-                    <option>/</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="inputAddress2">Second operand</label>
-                <input type="number" class="form-control" id="inputAddress2" placeholder="Enter number"
-                       name="secondOperand">
-            </div>
-            <button type="submit" class="btn btn-primary">Calculate</button>
-        </form>
-    </div>
-    <div class="col-4"></div>
-    <div class="col-4"></div>
-</div>
+<%--<div class="row">--%>
+<%--    <div class="col-4">--%>
+<%--        <form method="post" action="/calculator">--%>
+<%--            <div class="form-group">--%>
+<%--                <label for="inputAddress">First operand</label>--%>
+<%--                <input type="number" class="form-control" id="inputAddress" placeholder="Enter number"--%>
+<%--                       name="firsrOperand">--%>
+<%--            </div>--%>
+<%--            <div class="form-row">--%>
+<%--                <label for="inputState">Operator</label>--%>
+<%--                <select id="inputState" class="form-control" name="operator">--%>
+<%--                    <option selected>Addition</option>--%>
+<%--                    <option>+</option>--%>
+<%--                    <option>-</option>--%>
+<%--                    <option>*</option>--%>
+<%--                    <option>/</option>--%>
+<%--                </select>--%>
+<%--            </div>--%>
+<%--            <div class="form-group">--%>
+<%--                <label for="inputAddress2">Second operand</label>--%>
+<%--                <input type="number" class="form-control" id="inputAddress2" placeholder="Enter number"--%>
+<%--                       name="secondOperand">--%>
+<%--            </div>--%>
+<%--            <button type="submit" class="btn btn-primary">Calculate</button>--%>
+<%--        </form>--%>
+<%--    </div>--%>
+<%--    <div class="col-4"></div>--%>
+<%--    <div class="col-4"></div>--%>
+<%--</div>--%>
 </body>
 </html>
