@@ -50,14 +50,13 @@
 <div id="deleteNoteModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/product" method="post">
+            <form action="/product?action=delete" method="post">
                 <div class="modal-header">
                     <h4 class="modal-title">Delete Product</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="form-group">
                     <input type="hidden" name="id" id="id"/>
-                    <input type="hidden" name="action" value="delete">
                 </div>
                 <div class="modal-body">
                     <p>Are you sure you want to delete product ?</p>
