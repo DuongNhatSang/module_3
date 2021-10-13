@@ -7,13 +7,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "FuramaServlet",value = "/home")
+@WebServlet(name = "FuramaServlet",value = {"","/home"})
 public class FuramaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/home/home.jsp").forward(request,response);
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "employee":
+                break;
+            case "customer":
+                break;
+            case "service":
+                break;
+            case "contract":
+                break;
+            default:
+                request.getRequestDispatcher("/home/home.jsp").forward(request,response);
+        }
     }
+
 }
